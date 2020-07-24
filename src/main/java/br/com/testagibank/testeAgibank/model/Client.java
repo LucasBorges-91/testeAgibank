@@ -3,7 +3,7 @@ package br.com.testagibank.testeAgibank.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document( collection = "client")
+@Document( collection = "client" )
 public class Client {
 
     @Id
