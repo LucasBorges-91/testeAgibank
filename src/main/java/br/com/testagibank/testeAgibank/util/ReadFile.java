@@ -14,8 +14,7 @@ public class ReadFile {
     public static List<String> readFile( File file ) {
         List<String> lines = new ArrayList<>();
         if ( ValidateExtension.isDAT( file ) ) {
-            try (
-                BufferedReader br = new BufferedReader( new FileReader( file.getPath() ) ) ) {
+            try ( BufferedReader br = new BufferedReader( new FileReader( file.getPath() ) ) ) {
                 String line = br.readLine();
                 while ( line != null ) {
                     lines.add( line );
