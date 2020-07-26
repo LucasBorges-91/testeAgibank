@@ -20,4 +20,8 @@ public class SellerService {
                 .forEach( seller -> repository.save( seller ) );
         return true;
     }
+
+    public Integer amountSellers( List<Seller> sellers ) {
+        return sellers.size();
+    }
 }
