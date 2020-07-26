@@ -21,4 +21,8 @@ public class ClientService {
                 .forEach( client -> repository.save( client ) );
         return true;
     }
+
+    public Integer amountClients( List<Client> clients ) {
+        return clients.size();
+    }
 }
