@@ -7,25 +7,24 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Seller {
 
     @Id
-    private Integer id;
+    private String id;
     private String cpf;
     private String name;
     private Double salary;
 
     public Seller() {}
 
-    public Seller(Integer id, String cpf, String name, Double salary) {
-        this.id = id;
+    public Seller( String cpf, String name, Double salary) {
         this.cpf = cpf;
         this.name = name;
         this.salary = salary;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
