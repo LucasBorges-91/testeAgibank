@@ -29,11 +29,11 @@ public class Sale {
         this.id = id;
     }
 
-    public List<Item> getItem() {
+    public List<Item> getItens() {
         return itens;
     }
 
-    public void setItem(List<Item> item) {
+    public void setItens(List<Item> itens) {
         this.itens = itens;
     }
 
