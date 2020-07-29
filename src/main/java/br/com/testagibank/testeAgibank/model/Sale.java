@@ -42,7 +42,7 @@ public class Sale {
     }
 
     public void setSalesmanName( String salesmanName ) {
-        salesmanName = salesmanName;
+        this.salesmanName = salesmanName;
     }
 
     @Override
