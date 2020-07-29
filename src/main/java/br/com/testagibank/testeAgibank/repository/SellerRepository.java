@@ -6,4 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface SellerRepository extends MongoRepository<Seller, String> {
+
+    Seller findByName( String name );
+    Seller findByCpf( String cpf );
 }
