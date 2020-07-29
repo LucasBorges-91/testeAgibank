@@ -13,22 +13,24 @@ public class CreateModels {
         List<Item> itens = new ArrayList<>();
         List<Sale> sales = new ArrayList<>();
         for ( Object model: lineFile ) {
-            String[] fields = model.toString().split("ç");
+            String[] fields = model.toString().split( "ç" );
             Integer identity = Integer.parseInt( fields[0] );
             switch ( identity ) {
                 case 1:
-                    sellers.add( new Seller( fields[1], fields[2], Double.parseDouble(fields[3]) ) );
+                    sellers.add( new Seller( fields[1], fields[2], Double.parseDouble(fields[3] ) ) );
                     break;
                 case 2:
                     clients.add( new Client( fields[1], fields[2], fields[3] ) );
                     break;
                 case 3:
                     String[] subFilds = fields[2].replace("[", "").replace("]", "").split(",");
+                    List<Item> itensVenda = new ArrayList<>();
                     for ( String string: subFilds ) {
                         subFilds = string.split( "-" );
                         itens.add( new Item( Integer.parseInt( subFilds[0] ) , Integer.parseInt( subFilds[1] ), Double.parseDouble( subFilds[2]  ) ) );
+                        itensVenda.add( new Item( Integer.parseInt( subFilds[0] ) , Integer.parseInt( subFilds[1] ), Double.parseDouble( subFilds[2]  ) ) );
                     }
-                    sales.add( new Sale( Integer.parseInt( fields[1] ), itens, fields[3] ) );
+                    sales.add( new Sale( Integer.parseInt( fields[1] ), itensVenda, fields[3] ) );
                     break;
             }
         }
