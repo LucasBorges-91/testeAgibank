@@ -1,6 +1,7 @@
 package br.com.testagibank.testeAgibank.model;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document( collection = "item" )
@@ -13,17 +14,22 @@ public class Item {
 
     public Item() {}
 
-    public Item(Integer id, Integer quantity, Double price) {
+    public Item( Integer id, Integer quantity, Double price ) {
         this.id = id;
         this.quantity = quantity;
         this.price = price;
+    }
+
+    public Item( Integer id, Double price ) {
+        this.id = id;
+        this.price =price;
     }
 
     public Integer getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId( Integer id ) {
         this.id = id;
     }
 
@@ -31,7 +37,7 @@ public class Item {
         return quantity;
     }
 
-    public void setQuantity(Integer quantity) {
+    public void setQuantity( Integer quantity ) {
         this.quantity = quantity;
     }
 
@@ -39,7 +45,7 @@ public class Item {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice( Double price ) {
         this.price = price;
     }
 
