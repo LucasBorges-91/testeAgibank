@@ -16,9 +16,20 @@ public class ClientService {
 
     public Boolean save( FileDat fileDat ) {
         List<Client> clients = fileDat.getClients();
+
         clients.stream()
                 .filter( client -> client.getCnpj().length() == 16 && client.getName() != "" && client.getBusinessArea() != "" )
+                .filter( client -> !clientCnpjCheck( client.getCnpj() ) )
                 .forEach( client -> repository.save( client ) );
+        return true;
+    }
+
+    public Boolean clientCnpjCheck( String cnpj ) {
+        Client client = repository.findByCnpj( cnpj );
+
+        if ( client == null || !client.getCnpj().equals( cnpj ) ) {
+            return false;
+        }
         return true;
     }
 
