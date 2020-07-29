@@ -11,21 +11,21 @@ public class Sale {
     @Id
     private Integer id;
     private List<Item> itens;
-    private String SalesmanName;
+    private String salesmanName;
 
     public Sale() {}
 
-    public Sale(Integer id, List<Item> itens, String salesmanName) {
+    public Sale( Integer id, List<Item> itens, String salesmanName ) {
         this.id = id;
         this.itens = itens;
-        SalesmanName = salesmanName;
+        this.salesmanName = salesmanName;
     }
 
     public Integer getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId( Integer id ) {
         this.id = id;
     }
 
@@ -33,16 +33,16 @@ public class Sale {
         return itens;
     }
 
-    public void setItens(List<Item> itens) {
+    public void setItens( List<Item> itens ) {
         this.itens = itens;
     }
 
     public String getSalesmanName() {
-        return SalesmanName;
+        return salesmanName;
     }
 
-    public void setSalesmanName(String salesmanName) {
-        SalesmanName = salesmanName;
+    public void setSalesmanName( String salesmanName ) {
+        salesmanName = salesmanName;
     }
 
     @Override
@@ -50,7 +50,7 @@ public class Sale {
         return "Sale{" +
                 "id=" + id +
                 ", itens=" + itens +
-                ", SalesmanName='" + SalesmanName + '\'' +
+                ", SalesmanName='" + salesmanName + '\'' +
                 '}';
     }
 }
