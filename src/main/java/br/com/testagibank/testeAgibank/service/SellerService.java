@@ -15,13 +15,30 @@ public class SellerService {
 
     public Boolean save( FileDat fileDat ) {
         List<Seller> sellers = fileDat.getSellers();
+
         sellers.stream()
                 .filter( seller -> seller.getCpf().length() == 13 && seller.getName() != "" && seller.getSalary() > 0 )
+                .filter( seller -> !findByCpfCheck( seller.getCpf() ) )
                 .forEach( seller -> repository.save( seller ) );
+
+
         return true;
     }
 
     public Integer amountSellers( List<Seller> sellers ) {
         return sellers.size();
+    }
+
+    public Boolean findByCpfCheck( String cpf ) {
+        Seller seller = repository.findByCpf( cpf );
+
+        if ( seller == null || !seller.getCpf().equals( cpf ) ) {
+            return false;
+        }
+        return true;
+    }
+
+    public Seller findByName( String name ) {
+        return repository.findByName( name );
     }
 }
