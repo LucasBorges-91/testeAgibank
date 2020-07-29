@@ -8,7 +8,8 @@ import br.com.testagibank.testeAgibank.repository.SaleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.*;
+
 @Service
 public class SaleService {
 
@@ -17,10 +18,18 @@ public class SaleService {
 
     public Boolean save( FileDat fileDat ) {
         List<Sale> sales = fileDat.getSales();
+
         sales.stream()
                 .filter( sale -> sale.getId() != null && sale.getItens() != null && sale.getSalesmanName() != "" )
+                .filter( sale -> saleIdCheck( sale.getId() ) )
                 .forEach( sale -> repository.save( sale ) );
         return true;
+    }
+
+    public Boolean saleIdCheck( Integer id ) {
+        Optional<Sale> sale = repository.findById( id );
+
+        return sale.isEmpty() ? false: true;
     }
 
     public Integer mostExpansiveSale( List<Sale> sales ) {
@@ -28,20 +37,48 @@ public class SaleService {
         Integer saleExpansiveId = 0;
 
         for ( Sale sale: sales ) {
-            List<Item> itens = sale.getItens();
-            for ( Item item: itens ) {
-                double subtotal =+ item.getPrice() * item.getQuantity();
+            double subtotal = salePrice( sale );
                 if ( subtotal > saleExpansiveValue ) {
                     saleExpansiveValue = subtotal;
                     saleExpansiveId = sale.getId();
                 }
-            }
         }
         return saleExpansiveId;
     }
 
-//    public String worstSeller( List<Sale> sales, List<Seller> sellers ) {
-//
-//    }
+    public Double salePrice( Sale sale ) {
+        double total = 0.0;
+
+        for ( Item item: sale.getItens() ) {
+            total += item.getPrice() * item.getQuantity();
+        }
+        return total;
+    }
+
+    public String worstSeller( List<Sale> sales ) {
+        String wSeller = "";
+        double subtotal = 0.0;
+        Map<String, Double > sellers = new HashMap<>();
+
+        for ( Sale sale: sales ) {
+            wSeller = sale.getSalesmanName();
+            for ( Sale s: sales ) {
+                if ( wSeller.equals( s.getSalesmanName() ) ) {
+                   subtotal = salePrice( s );
+                }
+            }
+            sellers.put( wSeller, subtotal );
+        }
+
+        subtotal = sellers.get( sales.get( 0 ).getSalesmanName() );
+
+        for ( String name: sellers.keySet() ) {
+            if ( sellers.get( name ) <= subtotal ) {
+                wSeller = name;
+                subtotal = sellers.get( name );
+            }
+        }
+        return wSeller;
+    }
 
 }
