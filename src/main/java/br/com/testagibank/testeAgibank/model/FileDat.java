@@ -11,7 +11,7 @@ public class FileDat {
 
     public FileDat(){}
 
-    public FileDat( List<Seller> sellers, List<Client> clients, List<Item> itens, List<Sale> sales) {
+    public FileDat( List<Seller> sellers, List<Client> clients, List<Item> itens, List<Sale> sales ) {
         this.sellers = sellers;
         this.clients = clients;
         this.itens = itens;
@@ -22,7 +22,7 @@ public class FileDat {
         return clients;
     }
 
-    public void setClients(List<Client> clients) {
+    public void setClients( List<Client> clients ) {
         this.clients = clients;
     }
 
@@ -30,7 +30,7 @@ public class FileDat {
         return sellers;
     }
 
-    public void setSellers(List<Seller> sellers) {
+    public void setSellers( List<Seller> sellers ) {
         this.sellers = sellers;
     }
 
@@ -38,7 +38,7 @@ public class FileDat {
         return itens;
     }
 
-    public void setItens(List<Item> itens) {
+    public void setItens( List<Item> itens ) {
         this.itens = itens;
     }
 
@@ -46,7 +46,7 @@ public class FileDat {
         return sales;
     }
 
-    public void setSales(List<Sale> sales) {
+    public void setSales( List<Sale> sales ) {
         this.sales = sales;
     }
 

@@ -1,20 +1,24 @@
 package br.com.testagibank.testeAgibank.model;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.Objects;
 
 @Document( collection = "seller" )
 public class Seller {
 
     @Id
     private String id;
+    @Indexed( unique = true, sparse = true )
     private String cpf;
     private String name;
     private Double salary;
 
     public Seller() {}
 
-    public Seller( String cpf, String name, Double salary) {
+    public Seller( String cpf, String name, Double salary ) {
         this.cpf = cpf;
         this.name = name;
         this.salary = salary;
@@ -24,7 +28,7 @@ public class Seller {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId( String id ) {
         this.id = id;
     }
 
@@ -32,7 +36,7 @@ public class Seller {
         return cpf;
     }
 
-    public void setCpf(String cpf) {
+    public void setCpf( String cpf ) {
         this.cpf = cpf;
     }
 
@@ -40,7 +44,7 @@ public class Seller {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName( String name ) {
         this.name = name;
     }
 
@@ -48,7 +52,7 @@ public class Seller {
         return salary;
     }
 
-    public void setSalary(Double salary) {
+    public void setSalary( Double salary ) {
         this.salary = salary;
     }
 
