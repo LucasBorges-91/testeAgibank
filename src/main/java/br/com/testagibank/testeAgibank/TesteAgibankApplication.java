@@ -32,8 +32,8 @@ public class TesteAgibankApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception, IOException, InterruptedException {
 
 		WatchService watcher = FileSystems.getDefault().newWatchService();
-		Path diretorio = Paths.get("/home/lucas/data/in/");
-		diretorio.register( watcher, StandardWatchEventKinds.ENTRY_CREATE );
+		Path directory = Paths.get("/home/data/in/");
+		directory.register( watcher, StandardWatchEventKinds.ENTRY_CREATE );
 
 		while (true) {
 			WatchKey key = watcher.take();
@@ -44,7 +44,7 @@ public class TesteAgibankApplication implements CommandLineRunner {
 				}
 				Path path = (Path) watchEvent.get().context();
 
-				File dir = new File( diretorio + "/" + path );
+				File dir = new File( directory + "/" + path );
 
 				List<String> file = ReadFile.readFile( dir );
 
