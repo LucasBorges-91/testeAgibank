@@ -6,7 +6,7 @@ public class MovingFile {
 
     public static Boolean movingFile(File file ) {
         File source = new File( file.getPath() );
-        File dest = new File( "/home/lucas/data/backup/" + file.getName() );
+        File dest = new File( "/home/data/backup/" + file.getName() );
         return source.renameTo( dest );
     }
 }
