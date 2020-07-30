@@ -21,7 +21,7 @@ public class WriteFile {
 
         String fileName = file.getName().replaceFirst( "[.][^.]+$", "" ).toLowerCase();
 
-        String path = "/home/lucas/data/out/" + fileName + ".done" + ".dat";
+        String path = "/home/data/out/" + fileName + ".done" + ".dat";
 
 
         try ( BufferedWriter bw = new BufferedWriter( new FileWriter( path ) ) ){
