@@ -20,9 +20,9 @@ public class WriteFile {
                 };
 
         String fileName = file.getName().replaceFirst( "[.][^.]+$", "" ).toLowerCase();
-
-        String path = "/home/data/out/" + fileName + ".done" + ".dat";
-
+        String str = file.getParent();
+        System.out.println(str);
+        String path = file.getParent().replace( "in", "out/" ) + fileName + ".done" + ".dat";
 
         try ( BufferedWriter bw = new BufferedWriter( new FileWriter( path ) ) ){
             Arrays.stream(lines).forEach( line -> {
