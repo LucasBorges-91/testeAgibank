@@ -37,8 +37,4 @@ public class SellerService {
         }
         return true;
     }
-
-    public Seller findByName( String name ) {
-        return repository.findByName( name );
-    }
 }

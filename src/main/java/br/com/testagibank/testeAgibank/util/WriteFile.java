@@ -10,7 +10,7 @@ import java.util.Arrays;
 
 public class WriteFile {
 
-    public static void writeFile( File file, Integer amountSeller, Integer amountClients, Integer idMostExpansiveSale, Seller worstSeller ) {
+    public static void writeFile( File file, Integer amountSeller, Integer amountClients, Integer idMostExpansiveSale, String worstSeller ) {
 
         String[] lines = new String[] {
                     "Amount sellers: " + Integer.toString( amountSeller ),

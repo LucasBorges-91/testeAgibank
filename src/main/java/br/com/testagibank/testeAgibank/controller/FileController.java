@@ -52,8 +52,7 @@ public class FileController {
         return  serviceSale.mostExpansiveSale( fileDat.getSales() );
     }
 
-    public Seller worstSeller( FileDat fileDat ) {
-        String worstSellerName =  serviceSale.worstSeller( fileDat.getSales() );
-        return serviceSeller.findByName( worstSellerName );
+    public String worstSeller( FileDat fileDat ) {
+        return serviceSale.worstSeller( fileDat.getSales() );
     }
  }
