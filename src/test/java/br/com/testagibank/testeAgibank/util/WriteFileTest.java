@@ -20,7 +20,7 @@ class WriteFileTest {
         int sellers = 2;
         int clients = 3;
         int idSale = 23;
-        Seller seller = new Seller( "0000000000013", "Lucas", 500.00 );
+        String seller = "Lucas";
 
         Assertions.assertEquals( 0, dir.list().length);
 
