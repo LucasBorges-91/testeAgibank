@@ -52,7 +52,10 @@ public class TesteAgibankApplication implements CommandLineRunner {
 
 				FileDat fileDat = CreateModels.createModel( file );
 
-				WriteFile.writeFile( dir,  fileController.amountSellers( fileDat ), fileController.amountClients( fileDat ), fileController.idMostExpansiveSale( fileDat ), fileController.worstSeller( fileDat ) );
+				WriteFile.writeFile( dir,  fileController.amountSellers( fileDat ),
+						fileController.amountClients( fileDat ),
+						fileController.idMostExpansiveSale( fileDat ),
+						fileController.worstSeller( fileDat ) );
 
 				fileController.saveSeller( fileDat );
 
