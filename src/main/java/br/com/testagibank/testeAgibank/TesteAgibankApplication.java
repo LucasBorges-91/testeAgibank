@@ -31,8 +31,10 @@ public class TesteAgibankApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception, IOException, InterruptedException {
 
+		CreateDirectory.createAllDirectory();
+
 		WatchService watcher = FileSystems.getDefault().newWatchService();
-		Path directory = Paths.get("/home/data/in/");
+		Path directory = Paths.get( System.getProperty("user.home") + "/data/in/" );
 		directory.register( watcher, StandardWatchEventKinds.ENTRY_CREATE );
 
 		while (true) {
