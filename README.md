@@ -6,6 +6,14 @@ Para executar o projeto vai precisar:
 mongo utilizando a porta 27017 database de nome testeAgibank;
 
 e os diretorios :
-/home/data/in/ - onde sera feita a leitura do arquivo, 
-/home/data/out/ - onde sera feita a saida do arquivo com as respostas solicitadas,
-/home/data/backup/ - onde sera feito um backup do arquivo original inserido na pasta in.
+/home/user/data/in/ 
+/home/user/data/out/
+/home/user/data/backup/ 
+
+senao possuir serao criados automaticamente.
+
+o arquivo de saida contem as respostas de quantidade de vendedores, quantidade de clientes, id da venda mais cara e pior vendedor.
+
+cada arquivo de entrada gera um de saida com as suas respostas.
+
+o diretorio in fica sendo monitorado para cada arquivo que entra enquanto a aplicacao esta rodando.
