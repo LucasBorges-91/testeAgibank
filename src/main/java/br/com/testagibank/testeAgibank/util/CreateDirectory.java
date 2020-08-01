@@ -7,7 +7,7 @@ public class CreateDirectory {
     public static void createAllDirectory() {
 
         File fileIn = new File( System.getProperty("user.home") + "/data/in/" );
-        System.out.println( System.getProperty("user.home") );
+
         if ( !fileIn.exists() ) {
             fileIn.mkdir();
         }
