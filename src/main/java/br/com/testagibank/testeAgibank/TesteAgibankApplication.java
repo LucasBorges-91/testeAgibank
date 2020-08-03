@@ -3,10 +3,6 @@ package br.com.testagibank.testeAgibank;
 import br.com.testagibank.testeAgibank.controller.FileController;
 import br.com.testagibank.testeAgibank.model.FileDat;
 import br.com.testagibank.testeAgibank.util.*;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.io.File;
 import java.io.IOException;
@@ -15,21 +11,12 @@ import java.nio.file.WatchService;
 import java.util.List;
 import java.util.Optional;
 
-@SpringBootApplication
-public class TesteAgibankApplication implements CommandLineRunner {
 
-	@Autowired
-	FileController fileController;
+public class TesteAgibankApplication {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException, InterruptedException {
 
-
-		SpringApplication.run(TesteAgibankApplication.class, args);
-
-	}
-
-	@Override
-	public void run(String... args) throws Exception, IOException, InterruptedException {
+		FileController fileController = new FileController();
 
 		CreateDirectory.createAllDirectory();
 
@@ -57,14 +44,6 @@ public class TesteAgibankApplication implements CommandLineRunner {
 						fileController.idMostExpansiveSale( fileDat ),
 						fileController.worstSeller( fileDat ) );
 
-				fileController.saveSeller( fileDat );
-
-				fileController.saveClient( fileDat );
-
-				fileController.saveSale( fileDat );
-
-				fileController.saveItem( fileDat );
-
 				MovingFile.movingFile( dir );
 
 			}
@@ -74,7 +53,6 @@ public class TesteAgibankApplication implements CommandLineRunner {
 				break;
 			}
 		}
-
 		watcher.close();
 	}
 }
