@@ -1,13 +1,7 @@
 package br.com.testagibank.testeAgibank.model;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.Transient;
-import org.springframework.data.mongodb.core.mapping.Document;
-
-@Document( collection = "item" )
 public class Item {
 
-    @Id
     private Integer id;
     private Integer quantity;
     private Double price;
