@@ -1,14 +1,9 @@
 package br.com.testagibank.testeAgibank.model;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-
 import java.util.List;
 
-@Document( collection = "sale" )
 public class Sale {
 
-    @Id
     private Integer id;
     private List<Item> itens;
     private String salesmanName;
