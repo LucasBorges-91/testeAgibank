@@ -17,8 +17,13 @@ public class ReadFile {
             try ( BufferedReader br = new BufferedReader( new FileReader( file.getPath() ) ) ) {
                 String line = br.readLine();
                 while ( line != null ) {
-                    lines.add( line );
-                    line = br.readLine();
+                    if ( !line.startsWith( "00" ) ) {
+                        lines.set( lines.size() -1 , lines.get( lines.size() -1 ).concat( line ) );
+                        line = br.readLine();
+                    } else {
+                        lines.add( line );
+                        line = br.readLine();
+                    }
                 }
             }catch ( IOException e ) {
                 System.out.println( "Error reading file: " + e.getMessage() );
