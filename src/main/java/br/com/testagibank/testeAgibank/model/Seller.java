@@ -1,17 +1,8 @@
 package br.com.testagibank.testeAgibank.model;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.Indexed;
-import org.springframework.data.mongodb.core.mapping.Document;
-
-import java.util.Objects;
-
-@Document( collection = "seller" )
 public class Seller {
 
-    @Id
     private String id;
-    @Indexed( unique = true, sparse = true )
     private String cpf;
     private String name;
     private Double salary;
