@@ -13,7 +13,6 @@ class SellerServiceTest {
 
     @Test
     void amountSellers() {
-        SellerService service = new SellerService();
         List<Seller> sellers = new ArrayList<>();
         Seller seller1 = new Seller();
         Seller seller2 = new Seller();
@@ -22,6 +21,6 @@ class SellerServiceTest {
         sellers.add( seller2 );
         sellers.add( seller3 );
 
-        Assertions.assertEquals( 3, service.amountSellers( sellers ) );
+        Assertions.assertEquals( 3, SellerService.amountSellers( sellers ) );
     }
 }

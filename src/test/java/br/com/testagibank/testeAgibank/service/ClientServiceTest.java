@@ -20,7 +20,6 @@ class ClientServiceTest {
 
     @Test
     void amountClients() {
-        ClientService service = new ClientService();
         List<Client> clients = new ArrayList<>();
         Client client1 = new Client();
         Client client2 = new Client();
@@ -29,6 +28,6 @@ class ClientServiceTest {
         clients.add( client2 );
         clients.add( client3 );
 
-        Assertions.assertEquals( 3, service.amountClients( clients ) );
+        Assertions.assertEquals( 3, ClientService.amountClients( clients ) );
     }
 }

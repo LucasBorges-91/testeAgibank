@@ -12,7 +12,6 @@ class SaleServiceTest {
 
     @Test
     void mostExpansiveSale() {
-        SaleService service = new SaleService();
         List<Item> itensSale1 = new ArrayList<>();
         List<Item> itensSale2 = new ArrayList<>();
         Item item = new Item( 1, 20, 10.0 );
@@ -29,12 +28,11 @@ class SaleServiceTest {
         sales.add( sale1 );
         sales.add( sale2 );
 
-        Assertions.assertEquals( 1, service.mostExpansiveSale( sales ) );
+        Assertions.assertEquals( 1, SaleService.mostExpansiveSale( sales ) );
     }
 
     @Test
     void worstSeller() {
-        SaleService service = new SaleService();
         List<Item> itensSale1 = new ArrayList<>();
         List<Item> itensSale2 = new ArrayList<>();
         Item item = new Item( 1, 20, 10.0 );
@@ -51,6 +49,6 @@ class SaleServiceTest {
         sales.add( sale1 );
         sales.add( sale2 );
 
-        Assertions.assertEquals( "Marcos", service.worstSeller( sales ) );
+        Assertions.assertEquals( "Marcos", SaleService.worstSeller( sales ) );
     }
 }
