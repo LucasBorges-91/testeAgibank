@@ -20,6 +20,6 @@ class ReadFileTest {
     void readFileCountLines() {
         File file = new File( "/home/lucas/dataTest/in/testReader.dat" );
 
-        Assertions.assertEquals( "File read", ReadFile.readFile( file ).get( 0 ) );
+        Assertions.assertEquals( "003", ReadFile.readFile( file ).get( 0 ) );
     }
 }
