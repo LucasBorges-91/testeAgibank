@@ -14,11 +14,6 @@ public class Item {
         this.price = price;
     }
 
-    public Item( Integer id, Double price ) {
-        this.id = id;
-        this.price =price;
-    }
-
     public Integer getId() {
         return id;
     }
