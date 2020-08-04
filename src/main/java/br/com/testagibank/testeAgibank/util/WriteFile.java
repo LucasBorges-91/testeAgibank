@@ -10,7 +10,8 @@ import java.util.Arrays;
 
 public class WriteFile {
 
-    public static void writeFile( File file, Integer amountSeller, Integer amountClients, Integer idMostExpansiveSale, String worstSeller ) {
+    public static void writeFile( File file, Integer amountSeller, Integer amountClients,
+            Integer idMostExpansiveSale, String worstSeller ) {
 
         String[] lines = new String[] {
                     "Amount sellers: " + Integer.toString( amountSeller ),
@@ -19,7 +20,8 @@ public class WriteFile {
                     "Worst seller: " +  worstSeller
                 };
 
-        String fileName = file.getName().replaceFirst( "[.][^.]+$", "" ).toLowerCase();
+        String fileName = file.getName().replaceFirst( "[.][^.]+$", "" )
+                .toLowerCase();
 
         String path = file.getParent().replace( "in", "out/" ) + fileName + ".done" + ".dat";
 
