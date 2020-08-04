@@ -7,8 +7,13 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class WriteFile {
+
+    private static final Logger LOGGER = Logger.getLogger( WriteFile.class.getName() );
+
 
     public static void writeFile( File file, Integer amountSeller, Integer amountClients,
             Integer idMostExpansiveSale, String worstSeller ) {
@@ -36,7 +41,7 @@ public class WriteFile {
             });
         }
         catch ( IOException e ) {
-            e.printStackTrace();
+            LOGGER.log( Level.SEVERE, "Error to write file " + e.getStackTrace() );
         }
     }
 }
