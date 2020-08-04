@@ -6,14 +6,6 @@ import org.junit.jupiter.api.Test;
 class ClientTest {
 
     @Test
-    void getId() {
-        Client client = new Client();
-        client.setId( "12345" );
-
-        Assertions.assertEquals( "12345", client.getId() );
-    }
-
-    @Test
     void getCnpj() {
         Client client = new Client();
         client.setCnpj( "1234567891234567" );
