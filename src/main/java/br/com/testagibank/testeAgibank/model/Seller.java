@@ -2,7 +2,6 @@ package br.com.testagibank.testeAgibank.model;
 
 public class Seller {
 
-    private String id;
     private String cpf;
     private String name;
     private Double salary;
@@ -13,14 +12,6 @@ public class Seller {
         this.cpf = cpf;
         this.name = name;
         this.salary = salary;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId( String id ) {
-        this.id = id;
     }
 
     public String getCpf() {

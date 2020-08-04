@@ -2,7 +2,6 @@ package br.com.testagibank.testeAgibank.model;
 
 public class Client {
 
-    private String id;
     private String cnpj;
     private String name;
     private String businessArea;
@@ -13,14 +12,6 @@ public class Client {
         this.cnpj = cnpj;
         this.name = name;
         this.businessArea = businessArea;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId( String id ) {
-        this.id = id;
     }
 
     public String getCnpj() {
