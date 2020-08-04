@@ -10,6 +10,8 @@ import java.util.List;
 
 class SaleServiceTest {
 
+    SaleService saleService = new SaleService();
+
     @Test
     void mostExpansiveSale() {
         List<Item> itensSale1 = new ArrayList<>();
@@ -28,7 +30,7 @@ class SaleServiceTest {
         sales.add( sale1 );
         sales.add( sale2 );
 
-        Assertions.assertEquals( 1, SaleService.mostExpansiveSale( sales ) );
+        Assertions.assertEquals( 1, saleService.mostExpansiveSale( sales ) );
     }
 
     @Test
@@ -42,7 +44,7 @@ class SaleServiceTest {
         itensSale.add( item3 );
         Sale sale = new Sale( 1, itensSale, "Lucas" );
 
-        Assertions.assertEquals( 725.00, SaleService.salePrice( sale ) );
+        Assertions.assertEquals( 725.00, saleService.salePrice( sale ) );
     }
 
 
@@ -64,6 +66,6 @@ class SaleServiceTest {
         sales.add( sale1 );
         sales.add( sale2 );
 
-        Assertions.assertEquals( "Marcos", SaleService.worstSeller( sales ) );
+        Assertions.assertEquals( "Marcos", saleService.worstSeller( sales ) );
     }
 }

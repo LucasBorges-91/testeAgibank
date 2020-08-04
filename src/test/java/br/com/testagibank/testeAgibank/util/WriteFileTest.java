@@ -22,11 +22,11 @@ class WriteFileTest {
         int idSale = 23;
         String seller = "Lucas";
 
-        Assertions.assertEquals( 0, dir.list().length);
+        Assertions.assertEquals( 0, dir.list().length );
 
         WriteFile.writeFile( file, sellers, clients, idSale, seller );
 
-        Assertions.assertEquals( 1, dir.list().length);
+        Assertions.assertEquals( 1, dir.list().length );
         Files.delete(Path.of("/home/lucas/dataTest/out/testwrite.done.dat"));
     }
 }
