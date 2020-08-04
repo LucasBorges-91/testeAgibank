@@ -14,7 +14,6 @@ public class WriteFile {
 
     private static final Logger LOGGER = Logger.getLogger( WriteFile.class.getName() );
 
-
     public static void writeFile( File file, Integer amountSeller, Integer amountClients,
             Integer idMostExpansiveSale, String worstSeller ) {
 

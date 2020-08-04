@@ -7,11 +7,13 @@ import java.util.List;
 
 public class CreateModels {
 
-    public static FileDat createModel(List<String> lineFile ) {
+    public static FileDat createModel( List<String> lineFile ) {
+
         List<Seller> sellers = new ArrayList<>();
         List<Client> clients = new ArrayList<>();
         List<Item> itens = new ArrayList<>();
         List<Sale> sales = new ArrayList<>();
+
         for ( Object model: lineFile ) {
             String[] fields = model.toString().split( "ç" );
             Integer identity = Integer.parseInt( fields[0] );
