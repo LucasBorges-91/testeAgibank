@@ -18,10 +18,12 @@ public class TesteAgibankApplication {
 
 		FileController fileController = new FileController();
 
-		CreateDirectory.createAllDirectory( "data" );
+		String setDirectory = "data";
+
+		CreateDirectory.createAllDirectory( setDirectory );
 
 		WatchService watcher = FileSystems.getDefault().newWatchService();
-		Path directory = Paths.get( System.getProperty("user.home") + "/data/in/" );
+		Path directory = Paths.get( System.getProperty("user.home") + "/" + setDirectory + "/in/" );
 		directory.register( watcher, StandardWatchEventKinds.ENTRY_CREATE );
 
 		while (true) {
