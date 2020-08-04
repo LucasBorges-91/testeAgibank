@@ -18,7 +18,7 @@ public class TesteAgibankApplication {
 
 		FileController fileController = new FileController();
 
-		CreateDirectory.createAllDirectory();
+		CreateDirectory.createAllDirectory( "data" );
 
 		WatchService watcher = FileSystems.getDefault().newWatchService();
 		Path directory = Paths.get( System.getProperty("user.home") + "/data/in/" );
