@@ -7,7 +7,7 @@ import java.util.*;
 
 public class SaleService {
 
-    public static Integer mostExpansiveSale(List<Sale> sales) {
+    public Integer mostExpansiveSale(List<Sale> sales) {
         Double saleExpansiveValue = 0.0;
         Integer saleExpansiveId = 0;
 
@@ -21,7 +21,7 @@ public class SaleService {
         return saleExpansiveId;
     }
 
-    public static Double salePrice(Sale sale) {
+    public Double salePrice(Sale sale) {
         double total = 0.0;
 
         for ( Item item: sale.getItens() ) {
@@ -30,7 +30,7 @@ public class SaleService {
         return total;
     }
 
-    public static String worstSeller(List<Sale> sales) {
+    public String worstSeller(List<Sale> sales) {
         String wSeller = "";
         double subtotal = 0.0;
         Map<String, Double > sellers = new HashMap<>();
