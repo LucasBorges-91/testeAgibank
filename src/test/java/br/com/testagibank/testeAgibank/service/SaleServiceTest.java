@@ -32,6 +32,21 @@ class SaleServiceTest {
     }
 
     @Test
+    void salePrice() {
+        List<Item> itensSale = new ArrayList<>();
+        Item item = new Item( 1, 20, 10.0 );
+        Item item2 = new Item( 2, 10, 50.0 );
+        Item item3 = new Item( 3, 5, 5.0 );
+        itensSale.add( item );
+        itensSale.add( item2 );
+        itensSale.add( item3 );
+        Sale sale = new Sale( 1, itensSale, "Lucas" );
+
+        Assertions.assertEquals( 725.00, SaleService.salePrice( sale ) );
+    }
+
+
+    @Test
     void worstSeller() {
         List<Item> itensSale1 = new ArrayList<>();
         List<Item> itensSale2 = new ArrayList<>();
